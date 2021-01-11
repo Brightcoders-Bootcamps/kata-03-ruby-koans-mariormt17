@@ -14,11 +14,9 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  sides = [a,b,c]
+  sides = [a, b, c]
 
-  if((a + b <= c) || (a + c <= b) || (b + c <= a))
-    raise TriangleError
-  end
+  raise TriangleError if (a + b <= c) || (a + c <= b) || (b + c <= a)
 
   case sides.uniq.size
   when 1
